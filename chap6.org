@@ -78,7 +78,9 @@ In a dynamically typed language, the type of a variable is determined by the typ
 ** References in Record Fields
    (多重嵌套的record如何处理)
    -In COBOL, we use SID OF CUHK OF .... to reference the correct record.
+
    -Some also use *dot* notatoin(from big to small): ...CUHK.SID
+
    -Fully qualified references must include all record names
    -Elliptical references allow leaving out record names as long as the reference is unambiguous, for example in COBOL
 
