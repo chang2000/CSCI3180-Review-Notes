@@ -1,0 +1,21 @@
+>>>>>>>>>>>>>>>>>Later Part>>>>>>>>>>>>>>>>>>
+* Local Declaration
+From the formula od Heron:
+Area = sqrt(p(p-a)(p-b)(p-c)), p = (a + b + c)/2
+Why we should write like this, instead of using (a+b+c)/2 inside the sqrt.??
+** Reasons:
+*** Messy
+*** repeated calculation
+** Pay attentation to the data type here!> real or int
+* User-Defined Types
+
+One kind is enumeratoin type:
+
+datatype DIRECTION = North | East | South | West;
+datatype DIRECTION
+con East: 
+...
+> con means constructor
+> All capitalize is convention
+* case Expression
+

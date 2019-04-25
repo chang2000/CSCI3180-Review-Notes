@@ -1,0 +1,51 @@
+** Type Binding
+*** static type binding
+    there are *explict* and *impicit* bindings.
+**** implicit type binding are done by *language processor*
+     > complier or interpreter
+**** some are by naming comvention
+    pros: writability
+    cons: reliability
+    some languages support *type inferencing*
+**** What is type inferencing. just like var name = "Alex", the type of name is decided by the value of name
+     ML supports it
+*** Dynamic type binding- dynamic typing
+**** often dont have complier, but only a interpreter
+     high cost, type error detection is difficult
+** Storge Binding and Lifetime
+   allocation:
+   deallocation:
+   lifetime: the time during which a variable is bound to a memory cell
+> divide to 4 types:
+1. static
+2. stack-dynamic
+3. explict heap dynamic
+4. implicit heap dynamic
+*** static
+    > created before excuation, until program terminates.
+    > 
+*** stack-dynamic 
+    > created when the decalration statements are elaborated
+    > Are allocated from the run-time stack
+*** explict heap dynamic
+    > the allocation and deallocation are explictly written by programmers
+    > you shoule *track* the memory cell you assigned
+    > java objects are typical explict heap dyanmic 
+   
+    > ineficient beacause of the heap *management*
+*** implicit heap dynamic 
+    > allocatoion / deallocation caused by assignment
+    > yes, it's very flexiable
+    > but inefficient, since all attributes are dynamic
+* Scope
+scope is the range of *statement* in which the variable is visiable(can be accessed)
+** static scope
+   > for those support nested subprograms
+   > if the reference is not found in the local, then will find it in the *static ancestor*
+** out-block and in-block:对于C或者C++，在这两个block之间有相同的变量名是允许的，然而在C#，Java 中是不允许的
+** JS doesnt support nonfunctional block(一个程序写的好好地拿大括号圈起来)
+** Declaration Order (the "for(int i = 0..." issue) 
+*** In C#, the scope of a variables defined in a block is the whole block.
+*** in js, it's not illegel,but has the *undefined*
+* 
+  
