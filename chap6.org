@@ -1,73 +1,89 @@
 * Data types
 * 6.1 Introduction
   -A *data type* defines a collection of data and predefined operations on those objects.
+
   -Abstract data type
+
   -Descriptor: the collection of the attributes of a variable. Or, an area of memory.
+
   -for type checking & allocation/deallocation process
+
   -dynamic or static => run-time or complie time
 
   -the use of the word *variable* 
+
   -*identifier* in some languages do not have data type
+
   -*identifier* us just one of the attributes of variable
 * The main problem of this chap: 
 ** What operations are provided for this type, and how they are defined?
 * 6.2 Primitive Data Types
   -not defined in terms of other data types
+
   -some are merely reflection of the hardware
 ** Float point number
    -Even 0.1 can not be expressed by finite memory
+
    -loss of accuracy through arithmetic operations
 ** Decimal 
    Think: *The difference between Decimal and Float Point*
+
    Use *BSD* to store
+
    waste of memory
+
    can be supported by hardware, or simulated by software
 ** Boolean 
    So small and simple, just one bit
+
    readability & reliability
 ** Character
    -Stored as numeric codings
-
 * 6.3 Character String Types
 ** Typical Operations
    -Assignment and copying(Shallow or Deep)
+
    -Comparison
+
    -catenation
+
    -substring reference
+
    -pattern matching
 ** Some designing issues:
    -If string is not a primitive type in a language, it is stored in an array
+
    -Length problems: 3 types, REVIEW HERE
 ** Implementation of String
--NOTE TWO Types of decriptors
--Can be supported by hardware, but most are by software
--
+   -NOTE TWO Types of decriptors
+   
+   -Can be supported by hardware, but most are by software
 * 6.4 Enumeration Types
 ** Designign issues:
 -In a statically typed language, every variable has a type.  During type checking at compile time, all we have to do is to check if the value (in this case, "Sun") is assigned to a variable of appropriate type (a type that contains "Sun").  In that case, there's no ambiguity.  The "Sun" assigned to a weekdays variable must be the Sunday in weekdays.  The "Sun" assigned to a solarSys variable must be the Sun in the solar system.
 
 In a dynamically typed language, the type of a variable is determined by the type of the value assigned to the variable at runtime.  Unfortunately, it is unclear what the type of "Sun" is (if "Sun" appears in more than one enumerated type declaration).  So the type of the variable cannot be determined.
-
- 
-
 * 6.5 Array Types 
   Definition point: homogeneous! Relative to the first element!
 ** Subscript Binding and Array Categories
    *-static array*
    the range is statically bound to the storge.
+
    *-fixed stack-dynamic array*
    range are bound, but allocation is done at the declaration time during run-time
+
    *-fixed heap-dynamic array*
    similar to the former one, but stroage is allocated from the heap
+
   *-heap dynamic*
   most dynamic 
 ** Initialization
 ** Array Operations
    -Not supported by C family
+
    Array assignment in Python is just reference change
 ** Slices
 ** Implement(size of the element type)
-
 * 6.6 Associative Arrays
   -Review the *Hashes* type in Perl
 * 6.7 Record Type
@@ -85,6 +101,65 @@ In a dynamically typed language, the type of a variable is determined by the typ
    -Fully qualified references must include all record names
 
    -Elliptical references allow leaving out record names as long as the reference is unambiguous, for example in COBOL. FIRST, FIRST OF EMP-NAME, and FIRST of EMP-REC are elliptical references to the employee’s first name
-   
+** Operation on Records
+** Pros:
+   > for heterogeneous collection of data
+** Cons:
+   > slow, very slow
+** Implementation
+   > based on the fig6.7
+* 6.8 Tuple Type
+  > Similar to record, but the element in it are not named
 
+  > tuple in Python is not immutable
+* 6.9 List Type
+  > I think it's not very interesting, but I need to refer to text book for the usage in specific languages
+* 6.10 Union Type
+  > 一个变量，不同时刻可能有不同的类型
+** Used in compliers
+** issues: type checking and should it be embedded in records?
+   NO language support => *free union*
+** Evvaluation
+   > unions are potential unsafe contructs in some languages
+
+   > the reasons why C/C++ are not strongly typed
+
+   > can be safely used in ML,Haskell,F#
+
+   > Java, C# don't include union
+** Implementation
+   > using the same for every possiable variant, Sufficient storge for the largest variant is allocated
+* 6.11 Pointer and Reference Type
+A pointer type variable has a *range* of values that consists of memory addresses and a special value, nil
+** Pointer Operations
+   > assignment: set a pointer variable's value to some useful address
+  
+   > deferencing: j = *ptr
+*** C++ use it explicit
+** Problems in Pointers
+*** Dangling pointers
+    A pointer points to a heap-dynamic variable that has been deallocated
+*** Lost heap-dynamic variable
+    > no longer assceesible, called *garbage*
+  
+    > cause *memery leakage*
+** Reference Types
+   > pass by value and pass by reference
+** Implementation
+*** Dangling Pointer Problem
+    > Tombstone: when a heap-dynamic variable is deallocated, tombstone remains but set to nil
    
+    > not widely used, cost space and time
+*** locks-and-keys approach
+*** Heap Management
+    > eager approach
+   
+    > lazy approach
+   
+    > Consider more on it,
+   
+********Final exam point*********
+
+* String Typing, Type Equivalence
+* Theory and Data Types
+
