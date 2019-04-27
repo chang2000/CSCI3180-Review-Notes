@@ -1,0 +1,6 @@
+| type of variables | static                  | stack dynamic              | explicit heap dynamic              | implicit heap dynamic |
+| where reside      | a fixed memory cell     | run-time stack             | heap                               | heap                  |
+| mechanism behind  |                         |                            |                                    |                       |
+| when allocated    | before run time         | variable declaration       | when explict allocat instruction   | variable assignment   |
+| when deallocated  | after the whole program | when the method complete t | when explict deallocat instruction | after next assignment |
+| how deallocated   |                         |                            | explict deallocat instruction      |                       |

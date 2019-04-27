@@ -162,4 +162,3 @@ A pointer type variable has a *range* of values that consists of memory addresse
 
 * String Typing, Type Equivalence
 * Theory and Data Types                                :not:include:in:final<2019-04-26 Fri>:
-
